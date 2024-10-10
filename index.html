@@ -1,79 +1,14 @@
-<html dir="rtl" lang="ar" class=" joztdqhg idc0_350">
+<html dir="rtl" lang="ar">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-        .inner-form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 6px;
-        }
-
-        .input-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .input-field {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        .input-field label {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .input-field input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .input-field input[type="text"]:focus {
-            border-color: #4A217B;
-            outline: none;
-        }
-
-        .input-field:first-child {
-            margin-top: 0;
-        }
-
-        .input-field:last-child {
-            margin-bottom: 0;
-        }
-
-        img {
-            width: 80px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <title>فحص كشف المستلمين اصحاب البيانات المفقودة</title>
-    <script src="1.js"></script>
-    <script src="1.js"></script>
 </head>
 
 <body>
-    <div
-        style="font-family: Arial, Helvetica, sans-serif; line-height: 1.5; font-weight: normal; font-size: 15px; color: #2F3044; min-height: 100%; margin:0; padding:0; width:100%; background-color:#edf2f7">
+    <main>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
             style="border-collapse:collapse;margin:0 auto; padding:0; max-width:600px">
             <tbody>
@@ -147,9 +82,8 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </main>
     <script>
-
         function search() {
             let idNumber = parseInt(document.getElementById('id_number').value)
             let resultNo = document.getElementById('no')
@@ -168,14 +102,14 @@
                         idDisplay.innerHTML = idNumber
                         switch (idCheck) {
                             case 1:
-                            pactype.innerHTML = 'شوادر'
+                                pactype.innerHTML = 'شوادر'
                                 break;
                             case 2:
-                            pactype.innerHTML = 'طرد صحي'
+                                pactype.innerHTML = 'طرد صحي'
 
                                 break;
                             case 3:
-                            pactype.innerHTML = 'شوادر + طرد صحي'
+                                pactype.innerHTML = 'شوادر + طرد صحي'
 
                                 break;
                         }
@@ -184,39 +118,13 @@
                 };
                 script.src = '1.js';
 
-                document.head.appendChild(script); //or something of the likes
-
-                `switch (idNumber.toString().charAt(0)) {
-                    case '1':
-                        day = "Monday";
-                        break;
-                    case '2':
-                        day = "Tuesday";
-                        break;
-                    case '3':
-                        day = "Wednesday";
-                        break;
-                    case '4':
-                        day = "Thursday";
-                        break;
-                    case '5':
-                        day = "Friday";
-                        break;
-                    case '6':
-                        day = "Saturday";
-                    default:
-                        day = "Looking forward to the Weekend";
-                }
-                return console.log(day)`
+                document.head.appendChild(script);
             } else {
                 window.alert("رقم هوية خطأ")
             }
 
         }
     </script>
-
-
-
 </body>
 
 </html>
