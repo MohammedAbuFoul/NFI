@@ -9,16 +9,16 @@
 
 <body>
     <main>
-        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+        <table cellpadding="0" cellspacing="0" width="100%"
             style="border-collapse:collapse;margin:0 auto; padding:0; max-width:600px">
             <tbody>
                 <tr>
-                    <td align="center" valign="center" style="text-align:center; padding: 7px">
+                    <td style="text-align:center; padding: 7px">
                         <img alt="Logo" src="img/un.png">
                     </td>
                 </tr>
                 <tr>
-                    <td valign="center">
+                    <td>
                         <div style="margin: 10px 0; padding: 15px; background-color:#ffffff; border-radius: 6px">
                             <div style="padding-bottom: 8px; font-size: 13px; text-align: center;">
 
@@ -82,7 +82,8 @@
             </tbody>
         </table>
     </main>
-    <script>
+    <script src="ids.js"></script>
+    <script defer>
         function search() {
             let idNumber = parseInt(document.getElementById('id_number').value)
             let resultNo = document.getElementById('no')
@@ -92,32 +93,27 @@
             resultNo.style.display = "none"
             resultYes.style.display = "none"
             if (idNumber.toString().length === 9) {
-                var script = document.createElement('script');
-                script.onload = function () {
-                    idCheck = id1.get(idNumber)
-                    if (idCheck === undefined) {
-                        resultNo.style.display = "inline"
-                    } else {
-                        idDisplay.innerHTML = idNumber
-                        switch (idCheck) {
-                            case 1:
-                                pactype.innerHTML = 'شوادر'
-                                break;
-                            case 2:
-                                pactype.innerHTML = 'طرد صحي'
+                idCheck = id1.get(idNumber)
+                if (idCheck === undefined) {
+                    resultNo.style.display = "inline"
+                } else {
+                    idDisplay.innerHTML = idNumber
+                    switch (idCheck) {
+                        case 1:
+                            pactype.innerHTML = 'شوادر'
+                            break;
+                        case 2:
+                            pactype.innerHTML = 'طرد صحي'
 
-                                break;
-                            case 3:
-                                pactype.innerHTML = 'شوادر + طرد صحي'
+                            break;
+                        case 3:
+                            pactype.innerHTML = 'شوادر + طرد صحي'
 
-                                break;
-                        }
-                        resultYes.style.display = "inline"
+                            break;
                     }
-                };
-                script.src = '1.js';
+                    resultYes.style.display = "inline"
+                }
 
-                document.head.appendChild(script);
             } else {
                 window.alert("رقم هوية خطأ")
             }
